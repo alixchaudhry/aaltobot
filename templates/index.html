@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shamo Jee® Support</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <style>
+        :root {
+            --bg-color: #e9eaed;
+            --text-color: #000000;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        #chat-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            background-color: var(--bg-color);
+        }
+
+        #chat-form {
+            padding: 0.5rem;
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .message {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .message.user {
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: right;
+            margin-left: 30%;
+            justify-content: flex-end;
+        }
+
+        .message.assistant {
+            background-color: #f8f9fa;
+            color: #000000;
+            text-align: left;
+            margin-right: 30%;
+        }
+
+        .url-card {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .url-card:hover {
+            text-decoration: none;
+            color: inherit;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .url-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .url-card-info {
+            flex-grow: 1;
+            margin-left: 1rem;
+            padding: 1rem;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+</head>
+
+<body>
+    <div class="container h-100 d-flex flex-column">
+        <h1 class="mt-3">Shamo Jee® Support</h1>
+        <p>Perfecting spaces since the 1980's. Let us help you?</p>
+        <button type="button" class="btn btn-primary mb-3" id="start-chat-button">Start Chat</button>
+        <button type="button" class="btn btn-danger mb-3" id="end-chat-button" style="display:none;">End Chat</button>
+
+        <div id="chat-container" class="border rounded-3">
+            <div id="chat-history"></div>
+        </div>
+        <div id="overlay"
+            style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;">
+            <div class="text-center"
+                style="color:white;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <h3>Thank you for chatting with us!</h3>
+                <button type="button" class="btn btn-primary mb-3" id="download-chat-button">Download Chat
+                    Transcript</button>
+            </div>
+        </div>
+        <form id="chat-form" class="d-flex">
+            <input type="text" id="user_input" class="form-control" placeholder="Type your message here..." disabled>
+            <button type="submit" class="btn btn-primary" disabled><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+    <script>
+        // Add a new variable to hold the chat transcript
+        let chatTranscript = [];
+
+        // Instantiate the Showdown converter
+        const converter = new showdown.Converter();
+
+        function scrollToBottom() {
+            const chatContainer = $("#chat-container");
+            chatContainer.scrollTop(chatContainer[0].scrollHeight);
+        }
+
+        function renderUrlPreview(url) {
+            $.get("/fetch_url_metadata", { url: url }, function (data) {
+                const { title, description, image } = data.metadata;
+
+                const truncatedDescription = description
+                    .split(" ")
+                    .slice(0, 20)
+                    .join(" ")
+                    .concat("...");
+
+                const urlCard = `
+                    <a href="${url}" class="url-card" target="_blank">
+                        <img src="${image}" alt="URL Image">
+                        <div class="url-card-info">
+                            <h6>${title}</h6>
+                            <p>${truncatedDescription}</p>
+                        </div>
+                    </a>
+                `;
+                $("#chat-history").append(urlCard);
+                scrollToBottom();
+            });
+        }
+
+        function handleMessage(message, type) {
+            const urlRegex = /(https?:\/\/[^\s]+)/g;
+            const urls = message.match(urlRegex);
+
+            if (urls) {
+                urls.forEach(url => renderUrlPreview(url));
+                message = message.replace(urlRegex, `<a href="$1" target="_blank">$1</a>`);
+            }
+            message = message.replace(/\n/g, "<br>");
+            const messageClass = type === "You" ? "user" : "assistant";
+            const formattedMessage = `<p class="message ${messageClass}"><strong>${type}:</strong> ${message}</p>`;
+            $("#chat-history").append(formattedMessage);
+            // Add the message to the chat transcript
+            chatTranscript.push(`${type}: ${message}`);
+            scrollToBottom();
+        }
+
+        function startChat() {
+            // Reset the chat transcript when a new chat session starts
+            chatTranscript = [];
+            $.ajax({
+                type: 'POST',
+                url: '/start_chat',
+                success: function (data) {
+                    if (data.status === 'success') {
+                        console.log('Chat session started successfully.');
+                        $("#user_input").prop("disabled", false);
+                        $("button[type=submit]").prop("disabled", false);
+                        // Hide the "Start Chat" button and show the "End Chat" button
+                        $("#start-chat-button").hide();
+                        $("#end-chat-button").show();
+                    } else {
+                        console.log('Failed to start chat session.');
+                    }
+                },
+                error: function () {
+                    console.log('Error occurred while starting chat session.');
+                },
+            });
+        }
+
+        function endChat() {
+            // Show the overlay
+            $("#overlay").show();
+
+            // Set a timer to hide the overlay after 2 minutes
+            setTimeout(function () {
+                $("#overlay").hide();
+            }, 120000); // 120000 ms = 2 minutes
+
+            // Reset the chat
+            $("#user_input").prop("disabled", true);
+            $("button[type=submit]").prop("disabled", true);
+            $("#chat-history").empty();
+            $("#end-chat-button").hide();
+            $("#start-chat-button").show();
+        }
+
+        // Add a click event handler for the "Download Chat Transcript" button
+        $('#download-chat-button').on('click', function () {
+            // Create a file with the chat transcript
+            const blob = new Blob([chatTranscript.join('\n')], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `chat_transcript_${new Date().toISOString().replace(/[:\-.]/g, '')}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        $('#start-chat-button').on('click', function () {
+            startChat();
+        });
+
+        $("#chat-form").on("submit", function (e) {
+            e.preventDefault();
+            const user_input = $("#user_input").val();
+            if (user_input.trim()) {
+                handleMessage(user_input, "You");
+                $("#user_input").val("");
+
+                $.post("/get_response", { user_input: user_input }, function (data) {
+                    const response = data.response;
+                    // Convert markdown to HTML
+                    //                    const htmlResponse = converter.makeHtml(response);
+                    handleMessage(response, "Assistant");
+                });
+            }
+        });
+
+        $('#end-chat-button').on('click', function () {
+            endChat();
+        });
+
+        $(document).ready(function () {
+            scrollToBottom();
+        });
+    </script>
+</body>
+
+</html>
