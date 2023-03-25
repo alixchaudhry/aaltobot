@@ -1,1 +1,1 @@
-web: gunicorn gpt-3-app-playground-saad:gpt-3-app-playground-saad
+web: gunicorn app:app
