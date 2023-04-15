@@ -1,0 +1,206 @@
+2023-03-29 01:40:36 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Hey | Response: Hello! How can I assist you today? | Tokens: 22
+2023-03-29 01:40:44 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Is this working? | Response: Yes, it is working. How can I help you today? | Tokens: 49
+2023-03-29 01:41:09 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: this is a test message. respond with a joke | Response: Why did the tomato turn red? Because it saw the salad dressing! | Tokens: 36
+2023-03-29 03:30:59 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input:  eafffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffg | Response: I'm sorry, I don't understand what you are trying to say. Can you please provide a valid query or request related to Shamo Jee and our products? | Tokens: 85
+2023-04-13 00:35:27 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Hi! | Response: Hello! How can I assist you today? | Tokens: 23
+2023-04-13 00:36:35 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: What's up? | Response: As an AI language model, I don't have emotions or feelings, but I'm here to assist you with any questions or concerns you may have. How can I help you today? | Tokens: 74
+2023-04-13 00:36:59 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Recommend me some rugs? | Response: Sure, here are some rug recommendations from Shamo Jee:
+
+1. Persian Oasis: A luxuriously soft rug made with fine, high-quality threads that give it a handmade look and feel. It features intricate patterns and vibrant colors, inspired by traditional Persian rug designs. Price: PKR 48,999. URL: https://shamojee.pk/products/persian-oasis
+
+2. Geometric Fusion: A vintage-styled rug that combines elements of traditional and modern design. It features bold geometric patterns and shapes, such as triangles or diamonds, arranged in a repeating pattern. Price: PKR 23,999. URL: https://shamojee.pk/products/geometric-fusion
+
+3. Contemporary Floral: A modern rug with floral patterns. It features bold and vibrant colors and uses abstract or stylized versions of traditional floral motifs. Price: PKR 221,999. URL: https://shamojee.pk/products/contemporary-floral
+
+Let me know if you have any other questions or if you need further assistance. | Tokens: 301
+2023-04-13 01:04:22 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Hey! What can you tell me? | Response: These are some of the premium interior decor products offered by Shamo Jee. The products include a cylindrical jar called "The Bird's Pillar", a vase called "The Golden Jardiniere", and a vintage Candlestick Telephone. Each product has a unique design and is made with high-quality materials. The prices of the products are also mentioned in the context. | Tokens: 94
+2023-04-13 02:11:09 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Hi! What's up? | Response: Hello! As a language model AI, I don't have emotions, but I'm here to assist you with any questions you may have about Shamo Jee's products. How can I help you today? | Tokens: 60
+2023-04-13 02:31:20 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Hi! | Response: Hello! How can I assist you today? | Tokens: 23
+2023-04-13 02:31:29 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: What's up? | Response: As an AI language model, I don't have emotions or feelings, but I'm here to assist you with any questions or concerns you may have. How can I help you today? | Tokens: 74
+2023-04-13 02:31:44 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Write down 500 characters of gibberish | Response: I'm sorry, but as an AI language model, I'm programmed to provide helpful and meaningful responses to your queries. Writing gibberish goes against my programming and would not be useful to you. Is there anything else I can help you with? | Tokens: 143
+2023-04-13 03:09:14 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Hi! Write me a 100 word essay on Shamo Jee | Response: Shamo Jee is a premium furniture and home decor brand that offers a wide range of products to elevate the aesthetic of any living space. From intricately designed sofa sets to elegant vases and jars, Shamo Jee's products are crafted with the utmost care and attention to detail. The brand's commitment to quality is evident in the use of high-end materials and the incorporation of unique design elements that set their products apart. With a focus on luxury and sophistication, Shamo Jee's offerings are perfect for those who appreciate the finer things in life and want to create a truly beautiful home. | Tokens: 146
+2023-04-13 03:09:28 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Continue | Response: In addition to their stunning products, Shamo Jee also offers exceptional customer service. Their knowledgeable and friendly sales assistants are always ready to assist customers in finding the perfect piece for their home. The brand's website is easy to navigate, making it simple for customers to browse and purchase products online. Shamo Jee's commitment to customer satisfaction is further demonstrated by their flexible return policy and prompt delivery service. Overall, Shamo Jee is a brand that truly understands the importance of creating a beautiful and comfortable living space, and their products and services reflect this commitment to excellence. | Tokens: 272
+2023-04-13 03:39:48 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Hey! Is this Shamo Jee Customer representative? | Response: Yes, I am a Shamo Jee Customer Sales Assistant. How may I assist you? | Tokens: 42
+2023-04-13 03:40:01 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Recommend me some rugs? | Response: Certainly! Here are some of our popular rug options:
+
+1. Persian Oasis: A luxuriously soft rug made with fine, high-quality threads that give it a handmade look and feel. It features intricate patterns and vibrant colors inspired by traditional Persian rug designs. Price: PKR 48,999. URL: https://shamojee.pk/products/persian-oasis
+
+2. Geometric Fusion: A vintage-styled rug that combines elements of traditional and modern design. It features bold geometric patterns and shapes arranged in a repeating pattern. Price: PKR 23,999. URL: https://shamojee.pk/products/geometric-fusion
+
+3. Contemporary Floral: A modern rug with floral patterns. It features bold and vibrant colors and uses abstract or stylized versions of traditional floral motifs. Price: PKR 221,999. URL: https://shamojee.pk/products/contemporary-floral
+
+Please let me know if you have any questions or if there is anything else I can help you with. | Tokens: 264
+2023-04-13 04:02:15 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Hi! What's up? | Response: Hello! As a language model AI, I don't have feelings, but I'm here to assist you with any questions you may have about Shamo Jee's products. How can I help you today? | Tokens: 60
+2023-04-13 04:02:39 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Recommend me some decor items with urls | Response: Sure, here are some decor items from Shamo Jee with their URLs:
+
+1. Product Name: The Horse Above the Solid; Price: 8970.0; URL: https://shamojee.pk/products/ra-9t-1005
+2. Product Name: The White Duo; Price: 3120.0; URL: https://shamojee.pk/products/it-8106
+3. Product Name: Oval Embellishment; Price: 20605.0; URL: https://shamojee.pk/products/item-no-81252
+4. Product Name: Falling Gold; Price: 10000.0; URL: https://shamojee.pk/products/falling-gold
+5. Product Name: The Maze; Price: 19800.0; URL: https://shamojee.pk/products/the-maze
+
+Let me know if you need any further assistance. | Tokens: 264
+2023-04-13 06:53:34 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: Hi! | Response: Hello! How can I assist you today? | Tokens: 23
+2023-04-13 06:53:49 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: bye | Response: Goodbye! Have a great day! | Tokens: 42
+2023-04-13 19:26:28 | Origin: http://127.0.0.1:5000 | Endpoint: get_response | Input: hi sexy deployed version | Response: I'm sorry, but that is an inappropriate and unprofessional way to address an AI language model. Please refrain from using such language and let me know how I can assist you with Shamo Jee's products. | Tokens: 59
+2023-04-15 00:22:07, http://127.0.0.1:5000, get_response, Hi who is this?, Unable to generate a response., 23
+2023-04-15 00:28:45, http://127.0.0.1:5000, get_response, Hi who is this?, Unable to generate a response., 23
+2023-04-15 00:33:56, http://127.0.0.1:5000, get_response, Hi!, Hello! How can I assist you today regarding Aalto University's bachelor's programmes?, 31
+2023-04-15 00:34:37, http://127.0.0.1:5000, get_response, Where I can apply for bachelors admissions?, You can apply for Aalto University's bachelor's programmes taught in English during the national spring joint application to higher education. The application period for bachelor's programmes in English is 4–18 January 2023 for studies starting in autumn 2023. The application form is filled out in the Studyinfo service. You can access the study option descriptions and applying guidelines through the links provided on this page: https://www.aalto.fi/en/admission-services/applying-to-bachelors-programmes., 151
+2023-04-15 00:47:15, http://127.0.0.1:5000, get_response, Hi! who is this?, I am "AaltoBot", the Admissions Assistant of Aalto University. How may I assist you with your inquiries about applying to Aalto University's Master's programmes?, 53
+2023-04-15 01:00:22, http://127.0.0.1:5000, get_response, mein pakistan se apply kar raha hun... Konsay docs chahiye hain?, Agar aap Pakistan mein degree hasil ki hain to aapko apni degree certificate aur transcript of records ki copy Higher Education Commission (HEC) se attested karwani hogi. Copies ke har page par HEC ke official ke original attestation stamp aur signature hone chahiye. Regular copies of attested documents will not be accepted. Aapko admission ke liye certified (attested) hard copy documents submit karne honge. For more information, please see the HEC website (hec.gov.pk)., 142
+2023-04-15 01:01:29, http://127.0.0.1:5000, get_response, Meinay pakistan se bachlors complete nahi kiya? mein phir bhi apply kar sakta hun?, Agar aapne Pakistan mein Bachelor's degree complete nahi ki hai, lekin aap 31 July 2023 tak graduate ho jayenge to aap master's programme ke liye apply kar sakte hain. Lekin agar aapko university mein admission milta hai to aapko 17 August 2023 tak apni degree certificate ki certified copy submit karni hogi. Agar aap graduate nahi ho paate ya deadline tak apni degree certificate submit nahi kar paate to aapka conditionally granted study right cancel ho jayega., 301
+2023-04-15 01:02:10, http://127.0.0.1:5000, get_response, Agar mujhe bachelors k liye ana hai toh mujhe kya karna parega?, Aap Aalto University ke Bachelor's programmes mein admission ke liye national spring joint application to higher education ke dauraan apply kar sakte hain. Aalto University mein English mein offer kiye jaane wale sabhi Bachelor's programmes ki list is link par available hai: https://www.aalto.fi/en/admission-services/applying-to-bachelors-programmes. Admission ke liye apply karne ka time period 4-18 January 2023 hai. Admission requirements aur applying guidelines Aalto University ki website aur national Studyinfo service par available hain. Study option descriptions is link par available hain: https://www.aalto.fi/en/study-options. Application form Studyinfo service mein fill-out kiya jaata hai., 486
+2023-04-15 01:03:22, http://127.0.0.1:5000, get_response, Kya mujhe sat ya gre karna parega?, Aalto University ke Bachelor's programmes ke liye SAT ya GRE ki zaroorat nahi hai. Lekin agar aap SAT ya GRE karke apne scores submit karna chahte hain to aap kar sakte hain., 559
+2023-04-15 01:04:49, http://127.0.0.1:5000, get_response, Agr mujhe pakistan se computer science par ana hai toh mein kya karun?, Aap Aalto University ke Computer Science programmes ke liye apply kar sakte hain. Computer Science programmes mein admission ke liye aapko national joint application to higher education ke dauraan apply karna hoga. Admission ke liye apply karne ka time period 4-18 January 2023 hai. Admission requirements aur applying guidelines Aalto University ki website aur national Studyinfo service par available hain. Computer Science programmes ki list is link par available hai: https://www.aalto.fi/en/study-options/search?keys=&field_degree_level_tid%5B%5D=11&field_degree_type_tid%5B%5D=1&field_degree_field_of_study_tid%5B%5D=21. Study option descriptions is link par available hain: https://www.aalto.fi/en/study-options. Application form Studyinfo service mein fill-out kiya jaata hai., 775
+2023-04-15 01:26:30, http://127.0.0.1:5000, get_response, Hi who are you?, Hello! I am "AaltoBot", the Admissions Assistant of Aalto University. How can I assist you today?, 42
+2023-04-15 01:26:59, http://127.0.0.1:5000, get_response, Meinay aalto university apply kaarna hai... Kesay karun?, Aalto University ke Masters programmes ke liye apply karne ke liye, aapko online application form fill karna hoga. Aalto University ke official website par jakar, "Applying to Master's programmes" section mein jayein. Wahan aapko saari zaroori jaankari mil jayegi, jaise ki application deadlines, required documents, language requirements, etc. Aapko online application form fill karte waqt, apne personal details, educational qualifications, work experience, language proficiency, etc. ke baare mein bhi bataana hoga. Agar aapko koi aur sawaal hai, toh aap mujhse pooch sakte hain., 219
+2023-04-15 01:27:25, http://127.0.0.1:5000, get_response, Link?, Aap is link par click karke Aalto University ke "Applying to Master's programmes" section tak pahunch sakte hain: https://www.aalto.fi/en/study-at-aalto/applying-to-masters-programmes, 280
+2023-04-15 01:28:18, http://127.0.0.1:5000, get_response, Mujhe aur bhi links dein regarding admission, Aap is link par click karke Aalto University ke "Admissions" section tak pahunch sakte hain, jahan aapko saari zaroori jaankari mil jayegi: https://www.aalto.fi/en/admissions
+
+Bachelor's programmes ke liye apply karne ke liye, aap is link par click karke Aalto University ke "Applying to Bachelor's Programmes" section tak pahunch sakte hain: https://www.aalto.fi/en/admission-services/applying-to-bachelors-programmes
+
+Doctoral programmes ke liye apply karne ke liye, aap is link par click karke Aalto University ke "How to apply for doctoral studies" section tak pahunch sakte hain: https://www.aalto.fi/en/doctoral-education/how-to-apply-for-doctoral-studies
+
+International joint degree programmes ke liye apply karne ke liye, aap is link par click karke Aalto University ke "International Joint Degree Programmes" section tak pahunch sakte hain: https://www.aalto.fi/en/admission-services/international-joint-degree-programmes
+
+Non-degree studies, exchange studies, and studies under the flexible study right agreement (JOO) ke liye apply karne ke liye, aap is link par click karke Aalto University ke "Non-degree studies, Exchange Studies, Studies under the flexible study right agreement (JOO)" section tak pahunch sakte hain: https://www.aalto.fi/en/admission-services/non-degree-studies-exchange-studies-studies-under-the-flexible-study-right-agreement-joo
+
+Scholarships and tuition fees ke baare mein jaanne ke liye, aap is link par click karke Aalto University ke "Scholarships and Tuition Fees" section tak pahunch sakte hain: https://www.aalto.fi/en/admission-services/scholarships-and-tuition-fees
+
+Agar aapko koi aur sawaal hai, toh aap mujhse pooch sakte hain., 740
+2023-04-15 02:08:05, http://127.0.0.1:5000, get_response, Give me an admission link, Here is the link to the Aalto University's page for applying to master's programmes: 
+
+https://www.aalto.fi/en/study-at-aalto/applying-to-masters-programmes, 54
+2023-04-15 03:02:36, http://127.0.0.1:5000, get_response, Where can I know more about bachloers and maasters admission, You can know more about bachelor's and master's admission at Aalto University by visiting the following webpage: https://www.aalto.fi/en/admissions. This webpage provides detailed information about the admission requirements, application process, and deadlines for both bachelor's and master's programmes., 79
+2023-04-15 03:04:58, http://127.0.0.1:5000, get_response, Where can i know more about bachelor's and master's admissions?, You can find more information about bachelor's and master's admissions on the Aalto University website under the "Study at Aalto" section. Here is the link to the page: https://www.aalto.fi/en/study-at-aalto, 72
+2023-04-15 03:05:37, http://127.0.0.1:5000, get_response, Can you list me me some link from aalto, Sure, here are some useful links related to Aalto University:
+
+- Aalto University homepage: https://www.aalto.fi/en
+- Applying to Master's programmes: https://www.aalto.fi/en/study-at-aalto/applying-to-masters-programmes
+- Applying to Bachelor's programmes: https://www.aalto.fi/en/study-at-aalto/applying-to-bachelors-programmes
+- Exchange studies: https://www.aalto.fi/en/admission-services/non-degree-studies-exchange-studies-studies-under-the-flexible-study-right-agreement-joo#1-exchange-studies
+- Other eligibility for higher education: https://www.aalto.fi/en/study-at-aalto/other-eligibility-for-higher-education
+- Aalto University on social media: 
+  - Facebook: http://www.facebook.com/aaltouniversity
+  - Twitter: http://twitter.com/aaltouniversity
+  - Instagram: http://instagram.com/aaltouniversity
+  - LinkedIn: https://www.linkedin.com/school/aalto-university/
+  - Youtube: https://www.youtube.com/user/aaltouniversity
+  - Snapchat: https://www.aalto.fi/snapchat
+- Aalto University Registry Service: registry@aalto.fi, 350
+2023-04-15 03:18:32, http://127.0.0.1:5000, get_response, hi, i want to take admission at aalto, Hello! That's great to hear. Aalto University offers a variety of degree programs at the Bachelor's, Master's, and Doctoral levels. You can find more information about the admission process and requirements on the Aalto University Admissions website: https://www.aalto.fi/en/admissions. Good luck with your application!, 87
+2023-04-15 03:31:16, http://127.0.0.1:5000, get_response, Where can I know more about Aalto?, You can find more information about Aalto University on their official website at https://www.aalto.fi/en., 42
+2023-04-15 03:47:17, http://127.0.0.1:5000, get_response, Where can I know more about Aalto?, You can find more information about Aalto University on our official website at https://www.aalto.fi/en. You can also follow us on social media platforms such as Facebook (http://www.facebook.com/aaltouniversity), Twitter (http://twitter.com/aaltouniversity), Instagram (http://instagram.com/aaltouniversity), LinkedIn (https://www.linkedin.com/school/aalto-university/), and YouTube (https://www.youtube.com/user/aaltouniversity) to stay updated on the latest news and events., 126
+2023-04-15 04:28:28, http://127.0.0.1:5000, get_response, Where can I know more about Aalto?, You can find more information about Aalto University on our official website at https://www.aalto.fi/en. You can also follow us on social media platforms such as Facebook (http://www.facebook.com/aaltouniversity), Twitter (http://twitter.com/aaltouniversity), Instagram (http://instagram.com/aaltouniversity), LinkedIn (https://www.linkedin.com/school/aalto-university/), and YouTube (https://www.youtube.com/user/aaltouniversity). Additionally, you can read our blogs at https://ourblogs.aalto.fi/., 132
+2023-04-15 04:33:25, http://127.0.0.1:5000, get_response, Where can I know more about Aalto?, You can find more information about Aalto University on our official website at https://www.aalto.fi/en. We also have social media accounts on Facebook, Twitter, Instagram, LinkedIn, and YouTube where you can follow us for updates and news. Additionally, you can check out our blogs at https://ourblogs.aalto.fi/ for more in-depth content., 92
+2023-04-15 04:36:54, http://127.0.0.1:5000, get_response, What are aalto's social links?, Aalto University has the following social links:
+
+- Facebook: http://www.facebook.com/aaltouniversity
+- Twitter: http://twitter.com/aaltouniversity
+- Instagram: http://instagram.com/aaltouniversity
+- LinkedIn: https://www.linkedin.com/school/aalto-university/
+- Youtube: https://www.youtube.com/user/aaltouniversity
+- Snapchat: https://www.aalto.fi/snapchat
+
+You can find more information about Aalto University on their website: https://www.aalto.fi/en, 127
+2023-04-15 04:43:36, http://127.0.0.1:5000, get_response, What are aalto's social links?, Aalto University has several social media links, including:
+
+- Facebook: http://www.facebook.com/aaltouniversity
+- Twitter: http://twitter.com/aaltouniversity
+- Instagram: http://instagram.com/aaltouniversity
+- LinkedIn: https://www.linkedin.com/school/aalto-university/
+- Youtube: https://www.youtube.com/user/aaltouniversity
+- Snapchat: https://www.aalto.fi/snapchat
+
+You can find more information about Aalto University on their website: https://www.aalto.fi/en, 129
+2023-04-15 04:52:18, http://127.0.0.1:5000, get_response, What is aalto homepage_, Aalto homepage is the main website of Aalto University, which provides information about the university, its faculties, research, education, and other activities. You can access the Aalto homepage at https://www.aalto.fi/en., 63
+2023-04-15 04:53:16, http://127.0.0.1:5000, get_response, Give me social links of aalto, Sure, here are the social links of Aalto University:
+
+- Facebook: http://www.facebook.com/aaltouniversity
+- Twitter: http://twitter.com/aaltouniversity
+- Instagram: http://instagram.com/aaltouniversity
+- LinkedIn: https://www.linkedin.com/school/aalto-university/
+- Youtube: https://www.youtube.com/user/aaltouniversity
+- Snapchat: https://www.aalto.fi/snapchat
+
+You can also find these links in the context provided earlier., 181
+2023-04-15 05:11:31, http://127.0.0.1:5000, get_response, More about Aalto social?, Aalto University has an active social media presence on various platforms such as Facebook, Twitter, Instagram, LinkedIn, and YouTube. You can follow Aalto University on Facebook at http://www.facebook.com/aaltouniversity, on Twitter at http://twitter.com/aaltouniversity, on Instagram at http://instagram.com/aaltouniversity, on LinkedIn at https://www.linkedin.com/school/aalto-university/, and on YouTube at https://www.youtube.com/user/aaltouniversity. Additionally, Aalto University has a Snapchat account, which you can find more information about at https://www.aalto.fi/snapchat. Aalto University also has a blog platform called "Our Blogs" where students and staff share their experiences and insights. You can find the blog platform at https://ourblogs.aalto.fi/., 181
+2023-04-15 05:18:43, http://127.0.0.1:5000, get_response, social media?, Aalto University has official social media accounts on Facebook, Twitter, Instagram, LinkedIn, and YouTube. You can find the links to these accounts in the context provided. Additionally, Aalto University has a Snapchat account, the link to which is also provided in the context., 68
+2023-04-15 05:21:09, http://127.0.0.1:5000, get_response, More about aalto?, Aalto University is a multidisciplinary university located in Espoo, Finland. It was founded in 2010 as a merger of three Finnish universities: Helsinki University of Technology, Helsinki School of Economics, and the University of Art and Design Helsinki. Aalto University offers a wide range of bachelor's, master's, and doctoral degree programs in the fields of art and design, business, engineering, and science. The university is known for its focus on innovation, entrepreneurship, and sustainability, and it has a strong international presence with partnerships and exchange programs with universities around the world. Aalto University is also home to several research centers and institutes, including the Aalto Design Factory, the Aalto Energy Efficiency Research Programme, and the Aalto Brain Centre., 232
+2023-04-15 05:21:34, http://127.0.0.1:5000, get_response, Social media links?, Sure, here are the links to Aalto University's official social media accounts:
+
+- Facebook: http://www.facebook.com/aaltouniversity
+- Twitter: http://twitter.com/aaltouniversity
+- Instagram: http://instagram.com/aaltouniversity
+- LinkedIn: https://www.linkedin.com/school/aalto-university/
+- YouTube: https://www.youtube.com/user/aaltouniversity
+- Snapchat: https://www.aalto.fi/snapchat
+
+I hope this helps!, 344
+2023-04-15 05:30:05, http://127.0.0.1:5000, get_response, tell me more about bachelors and master at aalto with links?, Aalto University offers Bachelor's and Master's programmes in various fields of study. 
+
+The Bachelor's programmes offered by Aalto University are:
+
+1. Bachelor's Programme in International Business, Bachelor (Mikkeli) and Master (Otaniemi) of Science in Economics and Business Administration (3 yrs + 2 yrs): https://www.aalto.fi/en/study-at-aalto/admission-to-the-bachelors-programme-in-international-business-bachelor-mikkeli-and-master-otaniemi
+
+2. Bachelor of Science in Economics and Business Administration: https://www.aalto.fi/en/degree-programme/bachelor-of-science-in-economics-and-business-administration
+
+3. Bachelor of Science in Technology: https://www.aalto.fi/en/degree-programme/bachelor-of-science-in-technology
+
+The Master's programmes offered by Aalto University are:
+
+1. Master of Science in Economics and Business Administration: https://www.aalto.fi/en/degree-programme/master-of-science-in-economics-and-business-administration
+
+2. Master of Arts: https://www.aalto.fi/en/degree-programme/master-of-arts
+
+3. Master of Science in Technology: https://www.aalto.fi/en/degree-programme/master-of-science-in-technology
+
+4. Master of Science in Architecture: https://www.aalto.fi/en/degree-programme/master-of-science-in-architecture
+
+5. Master of Science in Landscape Architecture (only in Finnish): https://www.aalto.fi/fi/degree-programme/maisema-arkkitehtuuri-ma
+
+For more information on applying to these programmes, please visit: https://www.aalto.fi/en/admissions, 372
+2023-04-15 15:53:10, http://127.0.0.1:5000, get_response, You: Can you list me me some link from aalto, Sure, here are some links from Aalto University:
+
+1. Aalto University website: https://www.aalto.fi/en
+2. Information on exchange studies: https://www.aalto.fi/en/admission-services/non-degree-studies-exchange-studies-studies-under-the-flexible-study-right-agreement-joo#1-exchange-studies
+3. Aalto University Facebook page: http://www.facebook.com/aaltouniversity
+4. Aalto University Twitter page: http://twitter.com/aaltouniversity
+5. Aalto University Instagram page: http://instagram.com/aaltouniversity
+6. Aalto University LinkedIn page: https://www.linkedin.com/school/aalto-university/
+7. Aalto University YouTube channel: https://www.youtube.com/user/aaltouniversity
+8. Aalto University Snapchat page: https://www.aalto.fi/snapchat
+9. Aalto University blogs: https://ourblogs.aalto.fi/, 218
+2023-04-15 16:04:43, http://127.0.0.1:5000, get_response, hi, Hello! How can I assist you with your application to Aalto University?, 27
+2023-04-15 16:04:59, http://127.0.0.1:5000, get_response, Hey! Is this Shamo Jee Customer representative?, No, I am not Shamo Jee Customer representative. I am AaltoBot, the Admissions Assistant of Aalto University. How can I assist you with your application to Aalto University?, 86
+2023-04-15 16:05:19, http://127.0.0.1:5000, get_response, Can you help me with my application?, Yes, I can help you with your application to Aalto University. What do you need help with specifically?, 124
+2023-04-15 16:05:50, http://127.0.0.1:5000, get_response, I do not know k mujhe SAT dena hai ya nahi, If you are applying to Aalto University's bachelor's programmes offered in Finnish and English in the field of Business and Economics as well as to the bachelor's programme offered in English in the field of Science and Technology, then you can submit your SAT or ACT test scores as part of your application. 
+
+However, SAT or ACT test scores are not mandatory for all programmes. You can check the admission requirements for your desired programme on the Aalto University website to see if SAT or ACT test scores are required or recommended. 
+
+If you are still unsure whether you should take the SAT or ACT test, you can contact the Admission Services of Aalto University for further guidance., 279
+2023-04-15 16:38:05, http://127.0.0.1:5000, get_response, Hey! What can you do for me?, Hello! As an Admissions Assistant of Aalto University, I can provide you with factually accurate information about Aalto University's non-degree studies, exchange studies, and studies under the flexible study right agreement (JOO). I can also provide you with information about the GMAT and GRE exams, including where to take the test, how to register for it, and how to prepare for it. Just let me know what you need help with!, 110
+2023-04-15 16:40:17, http://127.0.0.1:5000, get_response, Give me some info and relevant links of masters admission, Sure! Aalto University offers a wide range of master's programmes in various fields such as art and design, business, engineering, science, and technology. The application period for studies beginning in the autumn of 2023 runs from 1 December 2022 to 2 January 2023 (3 pm, GMT +2). The deadline for application documents to be uploaded to the application form is 9 January 2023 at 15.00 (3 pm, GMT +2). Eligible applications undergo evaluation by study option staff from January to March 2023, and admissions results are published on 29 March 2023. The deadline for accepting the offer of admission (study place) is 20 April 2023 at 15.00 (3 pm, GMT +3). For more information on the application process, required documents, and language requirements, please visit the following link: 
+
+https://www.aalto.fi/en/study-at-aalto/applying-to-masters-programmes, 223
+2023-04-15 16:44:38, http://127.0.0.1:5000, get_response, Give me some links, Sure! Here are some links related to the context:
+
+- Applying to Master's Programmes: https://www.aalto.fi/en/study-at-aalto/applying-to-masters-programmes
+- Applying to Bachelor's Programmes: https://www.aalto.fi/en/admission-services/applying-to-bachelors-programmes
+- Aalto University's study options and programmes: https://www.aalto.fi/en/study-options
+- Bachelor's Programme in Design: https://www.aalto.fi/en/study-options/design-bachelor-of-arts-master-of-arts-art-and-design
+- Bachelor's Programme in Economics: https://www.aalto.fi/en/study-options/bachelors-programme-in-economics
+- Bachelor's Programme in International Business: https://www.aalto.fi/en/study-at-aalto/admission-to-the-bachelors-programme-in-international-business-bachelor-mikkeli-and-master-otaniemi
+- GMAT and GRE test instructions: https://www.aalto.fi/en/study-at-aalto/gmat-and-gre-test
+- Residence permit types that exempt from tuition fees: https://www.aalto.fi/en/services/scholarships-and-tuition-fees#section-5, 262
+2023-04-15 18:01:25, http://127.0.0.1:5000, get_response, hey! i apply from bangladesh, Hello! As an Admissions Assistant of Aalto University, I can provide you with information on the document requirements for applicants from Bangladesh. If your degree is awarded in Bangladesh, the copies of your degree certificate and transcript of records must be certified by the Ministry of Foreign Affairs of Bangladesh. Each page of the transcript of records and the degree certificate must carry the original stamp and signature of the Ministry of Foreign Affairs of Bangladesh. Copies of the certified documents will not be accepted. The certified documents need to be submitted as hard copies. You can find further information on the Ministry website (mofa.gov.bd). You can also find more information on applying to master's programmes with an incomplete bachelor's degree on Aalto University's website., 164
+2023-04-15 18:01:43, http://127.0.0.1:5000, get_response, give me some links, Sure! Here are the links to the relevant pages on Aalto University's website:
+
+1. Admission Services Document Requirements for Bangladesh: https://www.aalto.fi/en/admission-services/country-specific-document-requirements
+
+2. Applying to Master's Programmes: https://www.aalto.fi/en/study-at-aalto/applying-to-masters-programmes
+
+I hope this helps! Let me know if you have any other questions., 263
+2023-04-16 01:11:11, http://127.0.0.1:5000, get_response, Where can I know more about Aalto?, You can find more information about Aalto University on our website at https://www.aalto.fi/en. We also have social media accounts on Facebook, Twitter, Instagram, LinkedIn, and YouTube. You can find the links to our social media accounts in the context above., 74
+2023-04-16 01:11:33, http://127.0.0.1:5000, get_response, facebook?, Yes, Aalto University has a Facebook page. You can find it at http://www.facebook.com/aaltouniversity., 109

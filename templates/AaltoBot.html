@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AaltoBot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <style>
+        :root {
+            --bg-color: #e9eaed;
+            --text-color: #000000;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        #chat-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            height: 400px;
+            background-color: var(--bg-color);
+            font-size: x-small;
+        }
+
+        .form-control {
+            font-size: 0.8rem;
+            padding-right: 11%;
+            line-height: 0.5;
+        }
+
+        #chat-form {
+            padding: 0.5rem;
+            border-top: none;
+            line-height: 0.5;
+        }
+
+        .message {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .message.user {
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: right;
+            margin-left: 20%;
+            justify-content: flex-end;
+        }
+
+        .message.assistant {
+            background-color: #f8f9fa;
+            color: #000000;
+            text-align: left;
+            margin-right: 20%;
+        }
+
+        .url-card {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.2rem;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .url-card:hover {
+            text-decoration: none;
+            color: inherit;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .url-card img {
+            width: 20%;
+            object-fit: cover;
+        }
+
+        .url-card-info {
+            flex-grow: 1;
+            padding: 0.25rem;
+        }
+
+        .url-card-info h6 {
+            font-size: 0.5rem;
+            font-weight: bold;
+            margin-top: 0rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .url-card-info p {
+            font-size: 0.5rem;
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+        }
+
+        .input-container {
+            position: relative;
+            flex-grow: 1;
+            margin-right: 0.5rem;
+        }
+
+        #char-counter {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            top: 5px;
+            display: none;
+            background-color: ghostwhite;
+            padding: 3px;
+            border-radius: 5px;
+            text-align: end;
+            font-size: x-small;
+            color: grey;
+            line-height: initial;
+        }
+
+        #message-submit-button {
+            line-height: 0.5;
+            border: 0px;
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0.5rem;
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            height: 60px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+
+            background-image: linear-gradient(to bottom right, #FF69B4, #00BCFF);
+            background-size: 200% 200%;
+            animation: gradientAnimation 5s ease infinite;
+        }
+
+        #header-icon {
+            font-size: xx-large;
+        }
+
+        #header-title {
+            font-weight: bold;
+        }
+
+        .chat-header span {
+            color: #ffffff;
+        }
+
+        #end-chat-button {
+            color: purple;
+            width: 5rem;
+        }
+
+        #start-chat-button {
+            width: 5rem;
+        }
+
+        .chat-header button {
+            background-color: white;
+            color: #007bff;
+            cursor: pointer;
+            font-size: x-small;
+            border-radius: 5px;
+            font-weight: bold;
+            border: white;
+            padding: 3px;
+        }
+
+        #overlay {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            border-radius: 5px;
+        }
+
+        #close-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        #end-chat-note-on-overlay {
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #header-subtitle {
+            display: block;
+            font-size: 0.6rem;
+            font-weight: normal;
+            color: white;
+        }
+
+        #header-text {
+            display: inline-block;
+            vertical-align: middle;
+            flex: auto;
+        }
+
+        #chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        #chat-floating-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 50%;
+            z-index: 1001;
+            /* Additional styles for the button appearance */
+            background-image: linear-gradient(to bottom right, #FF69B4, #00BCFF);
+            border-width: 0px;
+            color: white;
+            font-size: x-large;
+
+            background-size: 200% 200%;
+            animation: gradientAnimation 5s ease infinite;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        #chat-floating-icon:hover {
+            background-color: #007bff;
+            background-image: none;
+            /* Replace this with your desired solid background color */
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        #chat-widget-container {
+            display: none;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+            transform: translateY(100%);
+            opacity: 0;
+            width: 330px;
+            height: 514px;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        @media (max-width: 767px) {
+            .chat-widget-container {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        #chat-widget-collapse-button {
+            border-radius: 50%;
+            /* Additional styles for the button appearance */
+            background-color: transparent;
+            color: white;
+        }
+
+        #start-end-minimize-buttons {
+            display: flex;
+            vertical-align: middle;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-left: 0.5rem;
+        }
+
+        #download-chat-button {
+            font-size: x-small;
+            background-color: white;
+            color: purple;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+</head>
+
+<body>
+    <div id="chat-widget">
+        <button id="chat-floating-icon">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div id="chat-widget-container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card">
+                        <div class="chat-header">
+                            <span id="header-icon">🎓</span>
+                            <div id="header-text">
+                                <span id="header-title">AaltoBot</span>
+                                <span id="header-subtitle">For all your admissions queries. Ask away!</span>
+                            </div>
+                            <div id="start-end-minimize-buttons" class="flex-end">
+                                <button id="chat-widget-collapse-button">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button id="start-chat-button">Start Chat</button>
+                                <button id="end-chat-button" style="display:none">End Chat</button>
+                            </div>
+                        </div>
+                        <div id="chat-container" class="card-body border rounded-3">
+                            <div id="chat-history"></div>
+                        </div>
+                        <div id="overlay">
+                            <div class="text-center" id="end-chat-note-on-overlay">
+                                <h5>Thank you for chatting with us!</h5>
+                                <button type="button" class="btn btn-primary" id="download-chat-button">
+                                    Download Chat Transcript
+                                </button>
+                            </div>
+                            <button type="button" class="btn btn-danger" id="close-overlay">&times;</button>
+                        </div>
+                        <form id="chat-form" class="card-footer d-flex">
+                            <div class="input-container">
+                                <input type="text" id="user_input" class="form-control"
+                                    placeholder="Type your message here..." maxlength="150" disabled>
+                                <div id="char-counter">150</div>
+                            </div>
+                            <button type="submit" id="message-submit-button" class="btn btn-primary" disabled>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+
+    <script>
+        // add a new variable to hold the chat transcript
+        let chatTranscript = [];
+        // const backendURL = "https://saadtestbotflask2.azurewebsites.net";
+        const backendURL = "http://127.0.0.1:5000";
+        // instantiate the Showdown converter
+        const converter = new showdown.Converter();
+        // const clientURL
+        const clientURL = "https://aalto.fi/en";
+
+        $("#chat-floating-icon").on("click", function () {
+            $("#chat-widget-container").css("display", "block");
+            setTimeout(function () {
+                $("#chat-widget-container").css({
+                    "transform": "translateY(0)",
+                    "opacity": "1"
+                });
+            }, 100);
+            $("#chat-floating-icon").hide();
+        });
+
+        $("#chat-widget-collapse-button").on("click", function () {
+            $("#chat-widget-container").css({
+                "transform": "translateY(100%)",
+                "opacity": "0"
+            });
+            setTimeout(function () {
+                $("#chat-widget-container").hide();
+            }, 500);
+            $("#chat-floating-icon").show();
+        });
+
+        $("#start-chat-button").off("click").on("click", function () {
+            startChat();
+        });
+
+        $("#end-chat-button").off("click").on("click", function () {
+            endChat();
+        });
+
+        $('#user_input').on('input', function () {
+            const maxLength = 150;
+            const remainingChars = 150 - $(this).val().length;
+            $('#char-counter').text(remainingChars);
+
+            if (remainingChars <= 0) {
+                this.value = this.value.substring(0, maxLength);
+            }
+        });
+
+        function saveChatHistory() {
+            sessionStorage.setItem('chatTranscript', JSON.stringify(chatTranscript));
+        }
+
+        function scrollToBottom() {
+            const chatContainer = $("#chat-container");
+            chatContainer.scrollTop(chatContainer[0].scrollHeight);
+        }
+
+        function renderUrlPreview(url) {
+            return new Promise(async (resolve, reject) => {
+                try {
+                    const response = await $.get(backendURL + "/api/fetch_url_metadata", { url: url });
+                    const { title, description, image, statusCode } = response.metadata;
+
+                    if (statusCode === 404) {
+                        resolve(null);
+                        return;
+                    }
+
+                    const imageUrl = image || "https://aaltologo.fi/logos/logo-78326-1.png";
+
+                    const truncatedDescription = description
+                        .split(" ")
+                        .slice(0, 20)
+                        .join(" ")
+                        .concat("...");
+
+                    const urlCard = `
+                        <a href="${url}" class="url-card" target="_blank">
+                            <img src="${imageUrl}" alt="URL Image">
+                            <div class="url-card-info">
+                                <h6>${title}</h6>
+                                <p>${truncatedDescription}</p>
+                            </div>
+                        </a>
+                    `;
+
+                    // Save the URL preview HTML string in the chat transcript
+                    chatTranscript.push({ message: null, urlCard });
+
+                    resolve(urlCard);
+                } catch (error) {
+                    reject(error);
+                }
+            });
+        }
+
+        async function handleMessage(message, type, urlCard = null) {
+            const urlRegex = /(https?:\/\/[^\s]+[^.!,?()\[\]{}\s])(\/)?/g;
+            const urls = message.match(urlRegex);
+
+            if (urls) {
+                urls.forEach(url => {
+                    message = message.replace(url, `<a href="${url}" target="_blank">${url}</a>`);
+                });
+            }
+
+            message = message.replace(/\n/g, "<br>");
+            const messageClass = type === "You" ? "user" : "assistant";
+            const formattedMessage = `<p class="message ${messageClass}"><strong>${type}:</strong> ${message}</p>`;
+            $("#chat-history").append(formattedMessage);
+            // Add the message to the chat transcript
+
+            if (urls) {
+                for (const url of urls) {
+                    try {
+                        const urlCard = await renderUrlPreview(url);
+                        if (urlCard) {
+                            $("#chat-history").append(urlCard);
+                            scrollToBottom();
+                        }
+                    } catch (error) {
+                        console.error("Error rendering URL preview:", error);
+                    }
+                }
+            }
+
+            chatTranscript.push({ message: `${type}: ${message}`, urlCard });
+            scrollToBottom();
+            if (urlCard) {
+                $("#chat-history").append(urlCard);
+                scrollToBottom();
+            }
+        }
+
+        function saveChatHistory() {
+            sessionStorage.setItem("chatTranscript", JSON.stringify(chatTranscript));
+        }
+
+        function loadChatHistory() {
+            const savedChatTranscript = sessionStorage.getItem("chatTranscript");
+            if (savedChatTranscript) {
+                chatTranscript = JSON.parse(savedChatTranscript);
+
+                chatTranscript.forEach((entry) => {
+                    if (entry.message) {
+                        $("#chat-history").append(entry.message.replace(/\n/g, "<br>"));
+                    }
+                    if (entry.urlCard) {
+                        $("#chat-history").append(entry.urlCard);
+                    }
+                });
+
+                scrollToBottom();
+            }
+        }
+
+        function startChat() {
+            // Reset the chat transcript when a new chat session starts
+            chatTranscript = [];
+            $.ajax({
+                type: 'POST',
+                url: backendURL + '/api/start_chat',
+                success: function (data) {
+                    if (data.status === 'success') {
+                        console.log('Chat session started successfully.');
+                        $("#user_input").prop("disabled", false);
+                        $("button[type=submit]").prop("disabled", false);
+                        // Hide the "Start Chat" button and show the "End Chat" button
+                        $("#start-chat-button").hide();
+                        $("#end-chat-button").show();
+                        $("#char-counter").show();
+
+                        // Send a default first message from the assistant
+                        handleMessage("👋 Hi! I'm AaltoBot, Aalto University's Admissions Assistant. 🎓 How can I help you today? 😊", "Assistant");
+                    } else {
+                        console.log('Failed to start chat session.');
+                    }
+                },
+                error: function () {
+                    console.log('Error occurred while starting chat session.');
+                },
+            });
+        }
+
+        function endChat() {
+            // Show the overlay
+            $("#overlay").show();
+
+            // Send a POST request to the /api/end_chat route
+            $.ajax({
+                type: 'POST',
+                url: backendURL + '/api/end_chat',
+                success: function (data) {
+                    if (data.status === 'success') {
+                        console.log('Chat session ended successfully.');
+                    } else {
+                        console.log('Failed to end chat session.');
+                    }
+                },
+                error: function () {
+                    console.log('Error occurred while ending chat session.');
+                },
+            });
+
+            // Set a timer to hide the overlay after 2 minutes
+            setTimeout(function () {
+                $("#overlay").hide();
+            }, 120000); // 120000 ms = 2 minutes
+
+            // Reset the chat
+            $("#user_input").prop("disabled", true);
+            $("button[type=submit]").prop("disabled", true);
+            $("#chat-history").empty();
+            $("#char-counter").hide();
+            $("#end-chat-button").hide();
+            $("#start-chat-button").show();
+        }
+
+        $('#close-overlay').on('click', function () {
+            $("#overlay").hide();
+        });
+
+        // Add a click event handler for the "Download Chat Transcript" button
+        $('#download-chat-button').on('click', function () {
+            // Create a file with the chat transcript
+            const blob = new Blob([chatTranscript.join('\n')], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `chat_transcript_${new Date().toISOString().replace(/[:\-.]/g, '')}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        $("#chat-form").on("submit", function (e) {
+            e.preventDefault();
+            const user_input = $("#user_input").val();
+            if (user_input.trim()) {
+                handleMessage(user_input, "You");
+                $("#user_input").val("");
+
+                // Disable input and submit button
+                $("#user_input").prop("disabled", true).attr("placeholder", "Thinking & Typing...");
+                $("button[type=submit]").prop("disabled", true);
+
+                $.post(backendURL + "/api/get_response", { user_input: user_input }, function (data) {
+                    const response = data.response;
+                    handleMessage(response, "Assistant");
+
+                    // Enable input and submit button
+                    $("#user_input").prop("disabled", false).attr("placeholder", "Type your message here...");
+                    $("button[type=submit]").prop("disabled", false);
+                });
+            }
+        });
+
+        $(document).ready(function () {
+            scrollToBottom();
+            loadChatHistory();
+        });
+    </script>
+</body>
+
+</html>
